@@ -1,0 +1,25 @@
+language: node_js
+services:
+  - mysql
+  - postgres
+  - redis
+  - memcache
+  - elasticsearch
+  - mongodb
+  - rabbitmq
+  - neo4j
+  - couchdb
+  - rethinkdb
+  - sqllite
+  - riak
+  - selenium 
+
+ 
+build:
+  ci:
+    - node --version
+    
+  pre_ci_boot:
+    image_name: drydock/u14nodall
+    image_tag: prod
+    pull: true  
