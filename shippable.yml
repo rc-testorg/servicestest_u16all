@@ -1,19 +1,19 @@
 language: node_js
 services:
-  - cassandra 3.6
-  - couchdb 1.6
-  - elasticsearch 2.4
-  - memcached 1.4
-  - mongodb 3.2
-  - mysql 5.7
-  - neo4j 3.0
-  - postgres 9.6
-  - rabbitmq 3.6
-  - redis 3.0
-  - rethinkdb 2.3
-  - riak 2.0.7
-  - selenium 2.53
-  - sqllite 3
+  - cassandra 
+  - couchdb 
+  - elasticsearch 
+  - memcached 
+  - mongodb 
+  - mysql 
+  - neo4j 
+  - postgres 
+  - rabbitmq 
+  - redis 
+  - rethinkdb 
+  - riak 
+  - selenium 
+  - sqllite 
 build:
   ci:
     - node --version
