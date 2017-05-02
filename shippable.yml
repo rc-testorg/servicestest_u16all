@@ -2,7 +2,7 @@ language: node_js
 
 services:
   - cassandra 
- # - elasticsearch 
+  - elasticsearch 
   - memcached 
   - mongodb 
   - mysql 
