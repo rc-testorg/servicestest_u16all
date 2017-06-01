@@ -9,7 +9,7 @@ services:
   - neo4j 
   - postgres 
   - rabbitmq 
-  - redis 
+  - redis  
   - selenium
   - sqllite 
   - couchdb 
