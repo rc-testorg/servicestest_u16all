@@ -11,7 +11,7 @@ services:
   - rabbitmq 
   - redis  
   - selenium
-  - sqllite 
+  - sqlite 
   - couchdb 
   - rethinkdb 
   - riak 
