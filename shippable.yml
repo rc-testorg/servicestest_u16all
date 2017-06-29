@@ -2,17 +2,17 @@ language: node_js
 
 services:
   - cassandra 
-  - elasticsearch 
+ # - elasticsearch 
   - memcached 
-  - mongodb 
+ # - mongodb 
   - mysql 
   - neo4j 
-  - postgres 
+ # - postgres 
   - rabbitmq 
-  - redis  
+ # - redis  
   - selenium
   - sqlite 
-  - couchdb 
+ # - couchdb 
   - rethinkdb 
   - riak 
   
