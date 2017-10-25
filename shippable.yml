@@ -1,7 +1,8 @@
 language: node_js
 
 services:
-  - cassandra 
+  - cassandra
+  - couchdb
   - elasticsearch 
   - memcached 
   - mongodb 
@@ -9,19 +10,18 @@ services:
   - neo4j 
   - postgres 
   - rabbitmq 
-  - redis  
+  - redis 
+  - rethinkdb
+  - riak
   - selenium
   - sqlite 
-  - couchdb 
-  - rethinkdb 
-  - riak 
-  
+
 build:
   ci:
-    - node --version
-    
+    - node --version    
     - echo SHIPPABLE_CASSANDRA_BINARY=$SHIPPABLE_CASSANDRA_BINARY
-    #- echo SHIPPABLE_ELASTICSEARCH_BINARY=$SHIPPABLE_ES_BINARY
+    - echo SHIPPABLE_COUCHDB_BINARY=$SHIPPABLE_COUCHDB_BINARY
+    - echo SHIPPABLE_ES_BINARY=$SHIPPABLE_ES_BINARY
     - echo SHIPPABLE_MEMCACHED_BINARY=$SHIPPABLE_MEMCACHED_BINARY
     - echo SHIPPABLE_MONGODB_BINARY=$SHIPPABLE_MONGODB_BINARY
     - echo SHIPPABLE_MYSQL_BINARY=$SHIPPABLE_MYSQL_BINARY
@@ -29,17 +29,20 @@ build:
     - echo SHIPPABLE_POSTGRES_BINARY=$SHIPPABLE_POSTGRES_BINARY
     - echo SHIPPABLE_RABBITMQ_BINARY=$SHIPPABLE_RABBITMQ_BINARY
     - echo SHIPPABLE_REDIS_BINARY=$SHIPPABLE_REDIS_BINARY
-    - echo SHIPPABLE_SELENIUM_v=$SHIPPABLE_SELENIUM_BINARY
-    ###- echo SHIPPABLE_SQLITE_BINARY=$SHIPPABLE_SQLITE_BINARY
-    #- echo SHIPPABLE_COUCHDB_BINARY=$SHIPPABLE_COUCHDB_BINARY
     - echo SHIPPABLE_RETHINKDB_BINARY=$SHIPPABLE_RETHINKDB_BINARY
-    ###- echo SHIPPABLE_RIAK_BINARY=$SHIPPABLE_RIAK_BINARY
+    - echo SHIPPABLE_SELENIUM_v=$SHIPPABLE_SELENIUM_BINARY
     
+    - cassandra -v
+    - elasticsearch -v
+    - memcached -V
+    - mongod -v
+    - psql --version
+    - redis-server -v
+    - riak version    
+    - ./serviceversion.sh
+        
   pre_ci_boot:
     image_name: drydock/u16all
     image_tag: master
-    pull: true  
+    pull: true 
     
-    
-    
- 
