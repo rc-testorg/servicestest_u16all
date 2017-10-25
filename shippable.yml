@@ -39,7 +39,7 @@ build:
     - psql --version
     - redis-server -v
     - riak version    
-    - ./serviceversion.sh
+   # - ./serviceversion.sh
         
   pre_ci_boot:
     image_name: drydock/u16all
